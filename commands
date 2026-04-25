@@ -1,0 +1,4 @@
+1.sudo nano /etc/snort/local.rules	-->  Opens the "Rule Book" where we write the custom logic to detect Pings and Port Scans.
+2.sudo nano /etc/snort/snort.lua	--> Opens the "Brain" of Snort to set the home network IP and link the rules file.
+3.sudo snort -c snort.lua -T		--> The Safety Check: Validates that there are no mistakes or typos in the code before starting.
+4.sudo snort -c snort.lua -R local.rules -i eth0 -A alert_fast	--> Active Defense: Starts live monitoring on the network card and flashes alerts instantly.
