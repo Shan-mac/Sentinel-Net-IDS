@@ -21,13 +21,13 @@ Sentinel-Net is a custom-configured Network Intrusion Detection System (NIDS) bu
 ### 1. Snort.lua Configuration
 The first step was configuring the Snort 3 "brain" using Lua. I defined the network variables to protect the local subnet and pointed the engine to the custom rules file.
 
-![screenshots/snort.png]
+![Snort Config](screenshots/snort.png)
 *Figure 1: Defining HOME_NET and including local.rules in snort.lua*
 
 ### 2. Local.rules Creation
 Next, I authored custom detection signatures. These rules instruct Snort to generate alerts whenever ICMP packets or TCP SYN packets (indicating a port scan) are detected on the network.
 
-![screenshots/rules.png]
+![Local Rules](screenshots/rules.png)
 *Figure 2: Custom signatures for ICMP and TCP Port Scan detection.*
 
 ---
@@ -37,7 +37,7 @@ Next, I authored custom detection signatures. These rules instruct Snort to gene
 ### 3. Final Execution & Alert Trigger
 After validating the configuration, the Snort engine was launched in real-time alert mode. A scan was initiated from a remote Windows 11 machine using Nmap.
 
-![screenshots/result.png]
+![Detection Result](screenshots/result.png)
 *Figure 3: Snort 3 successfully identifying and logging the TCP Port Scan in real-time.*
 
 ---
